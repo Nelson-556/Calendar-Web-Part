@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "whichFolder": "subdir",
+    "solutionName": "Calendar Web Part",
+    "useGulp": false,
+    "componentType": "webpart",
+    "template": "react",
+    "componentName": "Calendar",
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.22.0",
+    "sdksVersions": {},
+    "version": "1.22.2",
+    "libraryName": "calendar-web-part",
+    "libraryId": "e5eafb58-07b7-43f2-91da-50edacf60d38",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionShortDescription": "Calendar Web Part description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false
+  }
+}

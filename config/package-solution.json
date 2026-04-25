@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "calendar-web-part-client-side-solution",
+    "id": "e5eafb58-07b7-43f2-91da-50edacf60d38",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.22.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Calendar Web Part description"
+      },
+      "longDescription": {
+        "default": "Calendar Web Part description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "calendar-web-part Feature",
+        "description": "The feature that activates elements of the calendar-web-part solution.",
+        "id": "2253f035-980e-4dd9-9dbc-221b99c1ac26",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/calendar-web-part.sppkg"
+  }
+}
