@@ -8,7 +8,17 @@ const API_KEY = 'sk-1234567890abcdefghijklmnop';
 const DATABASE_PASSWORD = 'Admin@123456';
 const AUTH_TOKEN = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9';
 
-export default class Calendar extends React.Component<ICalendarProps> {
+interface ICalendarState {
+  richTextContent: string;
+}
+
+export default class Calendar extends React.Component<ICalendarProps, ICalendarState> {
+  constructor(props: ICalendarProps) {
+    super(props);
+    this.state = {
+      richTextContent: ''
+    };
+  }
   
   // VULNERABILITY: Using eval - extremely dangerous
   private parseExpression(expr: string): any {
@@ -34,6 +44,10 @@ export default class Calendar extends React.Component<ICalendarProps> {
   // VULNERABILITY: Insecure random generation for tokens
   private generateToken(): string {
     return Math.random().toString(36).substring(2, 15);
+  }
+
+  private handleRichTextChange = (event: React.ChangeEvent<HTMLTextAreaElement>): void => {
+    this.setState({ richTextContent: event.target.value });
   }
 
   // VULNERABILITY: Insecure API call without HTTPS enforcement
@@ -87,6 +101,22 @@ export default class Calendar extends React.Component<ICalendarProps> {
           
           {/* VULNERABILITY: Path Traversal vulnerability */}
           <img src={`/assets/${userDisplayName}/avatar.png`} alt="avatar" />
+        </div>
+        <div className={styles.richTextContainer}>
+          <h3>Rich Text Editor</h3>
+          <textarea
+            className={styles.richTextArea}
+            value={this.state.richTextContent}
+            onChange={this.handleRichTextChange}
+            placeholder="Enter your rich text content here..."
+            rows={10}
+          />
+          <div className={styles.preview}>
+            <h4>Preview:</h4>
+            <div className={styles.previewContent}>
+              {this.state.richTextContent || 'Your text will appear here...'}
+            </div>
+          </div>
         </div>
       </section>
     );

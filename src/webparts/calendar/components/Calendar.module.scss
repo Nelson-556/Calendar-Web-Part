@@ -32,3 +32,44 @@
     }
   }
 }
+
+.richTextContainer {
+  margin-top: 2em;
+  padding: 1.5em;
+  background-color: "[theme:neutralLighter, default: #f3f2f1]";
+  background-color: var(--neutralLighter);
+  border-radius: 4px;
+}
+
+.richTextArea {
+  width: 100%;
+  padding: 0.75em;
+  border: 1px solid "[theme:neutralTertiaryAlt, default: #c8c6c4]";
+  border: 1px solid var(--neutralTertiaryAlt);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 14px;
+  resize: vertical;
+  
+  &:focus {
+    outline: none;
+    border-color: "[theme:themePrimary, default: #0078d4]";
+    border-color: var(--themePrimary);
+    box-shadow: 0 0 0 1px var(--themePrimary);
+  }
+}
+
+.preview {
+  margin-top: 1.5em;
+}
+
+.previewContent {
+  padding: 1em;
+  background-color: white;
+  border: 1px solid "[theme:neutralLight, default: #edebe9]";
+  border: 1px solid var(--neutralLight);
+  border-radius: 4px;
+  min-height: 100px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
